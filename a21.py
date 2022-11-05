@@ -4,9 +4,9 @@ A = [0]*N
 for i in range(N):
     P[i], A[i] = map(int, input().split())
 dp = [[0]*N for _ in range(N)]
-for Len in range(N-1)[::-1]:  # N-2~0
-    for l in range(N-Len):  #0~N-Len-1
-        r = l+Len
+for Len in range(N-1)[::-1]:  # N-2~0: 区間の長さ
+    for l in range(N-Len):  #0~N-Len-1: 区間の始点
+        r = l+Len  # 区間の終点
         score1, score2 = 0, 0
         if l>0 and l<=P[l-1]-1<=r:
             score1 = A[l-1]
