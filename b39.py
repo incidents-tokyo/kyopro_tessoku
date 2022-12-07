@@ -18,3 +18,29 @@ for i in range(D):
         ans += maxValue
         used[maxID] = True
 print(ans)
+'''
+参考
+from collections import deque
+import heapq
+
+N,D = map(int,input().split())
+
+G = [list() for _ in range(2001)]
+
+for _ in range(N):
+    X,Y = map(int,input().split())
+    G[X].append(Y)
+    
+Q = []
+Ans = 0
+
+for i in range(1,D+1):
+    for j in G[i]:
+        heapq.heappush(Q,-j)
+    
+    if Q:
+        Ans -= heapq.heappop(Q)
+     
+        
+print(Ans)
+'''
